@@ -129,9 +129,7 @@ const AddTransactionForm = ({
         setValue("description", scannedData.description);
       }
       if (scannedData.category) {
-        console.log("Category working" + scannedData.category);
         setValue("category", scannedData.category);
-        console.log("Category set: " + getValues("category"));
       }
       toast.success("Receipt scanned successfully");
     }
