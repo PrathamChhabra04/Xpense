@@ -5,10 +5,8 @@ import TransactionsTable from "../_components/transactions-table";
 import AccountChart from "../_components/account-chart";
 import BarLoaderClient from "@/components/Loader";
 
-type Params = {
-  id: string;
-};
-const AccountsPage = async ({ params }: { params: Params }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const AccountsPage = async ({ params }: { params: any }) => {
   const { id } = await params;
   const accountData = await getAccountWithTransactions(id);
   if (!accountData) notFound();

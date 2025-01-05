@@ -7,7 +7,12 @@ import { toast } from "sonner";
 import useFetch from "@/hooks/useFetch";
 import { scanReceipt } from "@/actions/transaction";
 
-export function ReceiptScanner({ onScanComplete }) {
+interface ReceiptScannerProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onScanComplete: (data: any) => void;
+}
+
+export function ReceiptScanner({ onScanComplete }: ReceiptScannerProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const {
@@ -16,7 +21,8 @@ export function ReceiptScanner({ onScanComplete }) {
     data: scannedData,
   } = useFetch(scanReceipt);
 
-  const handleReceiptScan = async (file) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleReceiptScan = async (file: any) => {
     if (file.size > 5 * 1024 * 1024) {
       toast.error("File size should be less than 5MB");
       return;
@@ -30,7 +36,7 @@ export function ReceiptScanner({ onScanComplete }) {
       onScanComplete(scannedData);
       toast.success("Receipt scanned successfully");
     }
-  }, [scanReceiptLoading, scannedData]);
+  }, [scanReceiptLoading, scannedData, onScanComplete]);
 
   return (
     <div className="flex items-center gap-4">
