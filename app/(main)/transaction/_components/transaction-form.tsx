@@ -121,7 +121,6 @@ const AddTransactionForm = ({
     }
   }, [transactionResult, transactionLoading, reset, router, editMode]);
   const handleScanComplete = (scannedData: any) => {
-    console.log(scannedData);
     if (scannedData) {
       setValue("amount", scannedData.amount.toString());
       setValue("date", new Date(scannedData.date));

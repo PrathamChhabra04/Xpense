@@ -23,6 +23,6 @@ export const checkUser = async () => {
     });
     return newUser;
   } catch (error: unknown) {
-    console.log(error);
+    console.error(error);
   }
 };

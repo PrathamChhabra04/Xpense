@@ -88,7 +88,7 @@ export async function createTransaction(data: any) {
     return { success: true, data: serializeAmount(transaction) };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    console.log(error);
+    console.error(error);
     throw new Error(error.message);
   }
 }
