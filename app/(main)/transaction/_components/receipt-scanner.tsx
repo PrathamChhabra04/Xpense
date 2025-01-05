@@ -36,7 +36,8 @@ export function ReceiptScanner({ onScanComplete }: ReceiptScannerProps) {
       onScanComplete(scannedData);
       toast.success("Receipt scanned successfully");
     }
-  }, [scanReceiptLoading, scannedData, onScanComplete]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scanReceiptLoading, scannedData]);
 
   return (
     <div className="flex items-center gap-4">

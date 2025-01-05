@@ -119,7 +119,8 @@ const AddTransactionForm = ({
       reset();
       router.push(`/account/${transactionResult.data.accountId}`);
     }
-  }, [transactionResult, transactionLoading, reset, router, editMode]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [transactionResult, transactionLoading, editMode]);
   const handleScanComplete = (scannedData: any) => {
     if (scannedData) {
       setValue("amount", scannedData.amount.toString());
@@ -130,7 +131,6 @@ const AddTransactionForm = ({
       if (scannedData.category) {
         setValue("category", scannedData.category);
       }
-      toast.success("Receipt scanned successfully");
     }
   };
   return (

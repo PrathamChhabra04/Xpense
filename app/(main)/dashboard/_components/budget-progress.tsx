@@ -129,7 +129,7 @@ const BudgetProgress = ({
                   ? "bg-red-500"
                   : percentUsed >= 75
                     ? "bg-yellow-500"
-                    : "bg-green-400"
+                    : "bg-blue-500"
               }`}
             />
             <p className="text-xs text-muted-foreground text-right">
