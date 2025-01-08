@@ -29,12 +29,12 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="pt-32 pb-20 px-4 overflow-x-hidden">
+    <section className="pt-12 md:pt-32 pb-20 px-4 overflow-x-hidden">
       <div className="container mx-auto text-center">
         <h1 className="text-5xl md:text-8xl lg:text-[105px] pb-6 gradient-title">
           Turn Financial Chaos <br /> into Clarity
         </h1>
-        <p className="text-xl text-gray-600 mb-8 mt-2 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-600 mb-8 mt-2 max-w-2xl mx-auto">
           Simplify your financial journey with real-time tracking, intelligent
           analysis, actionable insights, all powered by cutting-edge AI.
         </p>
@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
             </Button>
           </Link>
         </div>
-        <div className="hero-image-wrapper mt-5 md:mt-0">
+        <div className="md:hero-image-wrapper mt-5 md:mt-0">
           <div ref={imageRef} className="hero-image">
             <Image
               src="/banner.jpg"

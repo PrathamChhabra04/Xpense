@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   PieChart,
   Pie,
@@ -23,13 +23,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const COLORS = [
-  "#FF6B6B",
-  "#4ECDC4",
-  "#45B7D1",
-  "#96CEB4",
-  "#FFEEAD",
-  "#D4A5A5",
-  "#9FA8DA",
+  "#FF6F91", // Soft Pink
+  "#6B8E23", // Olive Green
+  "#FFD700", // Golden Yellow
+  "#FF6347", // Tomato Red
+  "#8A2BE2", // Blue Violet
+  "#32CD32", // Lime Green
+  "#00CED1", // Dark Turquoise
+  "#FF1493", // Deep Pink
+  "#20B2AA", // Light Sea Green
+  "#D2691E", // Chocolate
+  "#B0E0E6", // Powder Blue
+  "#D3D3D3", // Light Grey
 ];
 
 interface Account {
@@ -60,6 +65,19 @@ export function DashboardOverview({
   const [selectedAccountId, setSelectedAccountId] = useState<string>(
     accounts.find((a) => a.isDefault)?.id || accounts[0]?.id || ""
   );
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener on resize
+    window.addEventListener("resize", checkMobile);
+
+    // Clean up the event listener on unmount
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Filter transactions for selected account
   const accountTransactions = transactions.filter(
@@ -186,7 +204,7 @@ export function DashboardOverview({
           ) : (
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
+                <PieChart className="mobile-hide-labels">
                   <Pie
                     data={pieChartData}
                     cx="50%"
@@ -194,7 +212,11 @@ export function DashboardOverview({
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
-                    label={({ name, value }) => `${name}: $${value.toFixed(2)}`}
+                    label={
+                      isMobile
+                        ? ({ value }) => `$${value.toFixed(2)}`
+                        : ({ name, value }) => `${name}: $${value.toFixed(2)}`
+                    }
                   >
                     {pieChartData.map((entry, index) => (
                       <Cell

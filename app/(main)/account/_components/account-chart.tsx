@@ -127,20 +127,20 @@ const AccountChart: React.FC<AccountChartProps> = ({ transactions }) => {
         <div className="flex justify-around mb-6 text-sm">
           <div className="text-center">
             <p className="text-muted-foreground">Total Income</p>
-            <p className="text-lg font-bold text-green-500">
+            <p className="text-base md:text-lg font-bold text-green-500">
               ${totals.income.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
             <p className="text-muted-foreground">Total Expenses</p>
-            <p className="text-lg font-bold text-red-500">
+            <p className="text-base md:text-lg font-bold text-red-500">
               ${totals.expense.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
             <p className="text-muted-foreground">Net</p>
             <p
-              className={`text-lg font-bold ${
+              className={`text-base md:text-lg font-bold ${
                 totals.income - totals.expense >= 0
                   ? "text-green-500"
                   : "text-red-500"

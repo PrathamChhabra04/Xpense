@@ -17,9 +17,9 @@ const AddTransactionPage = async ({ searchParams }: any) => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-5 mt-10">
-      <div className="flex justify-center md:justify-normal mb-6">
-        <h1 className="text-5xl gradient-title ">
+    <div className="max-w-3xl mx-auto px-5 mt-8 md:mt-10">
+      <div className="flex justify-center md:justify-normal mb-4 md:mb-6">
+        <h1 className="text-4xl md:text-5xl gradient-title ">
           {editId ? "Edit" : "Add"} Transaction
         </h1>
       </div>

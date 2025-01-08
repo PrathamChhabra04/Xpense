@@ -54,7 +54,7 @@ export default function BudgetInsights() {
   return insightsLoading ? (
     <BarLoaderClient {...loaderProps} />
   ) : (
-    <div className="max-w-4xl mx-auto px-4 py-6">
+    <div className="max-w-4xl md:mx-auto md:px-4 md:py-6">
       <div className="space-y-6">
         <Card className="p-6">
           <h2 className="text-2xl font-bold mb-4">Budget Insights</h2>
@@ -69,18 +69,20 @@ export default function BudgetInsights() {
 
         {/* Total Budget & Savings */}
         <div className="grid grid-cols-2 gap-6">
-          <Card className="p-6">
-            <p className="text-lg font-semibold">Total Recommended Budget</p>
-            <p className="text-2xl font-bold text-orange-600">
+          <Card className="p-3 md:p-6">
+            <p className="flex items-center justify-center text-sm md:text-lg font-semibold">
+              Total Recommended Budget
+            </p>
+            <p className="flex items-center justify-center text-base md:text-2xl font-bold text-orange-600">
               ${insightsData?.totalRecommendedBudget.toFixed(2)}
             </p>
           </Card>
 
-          <Card className="p-6">
-            <p className="text-lg font-semibold">
+          <Card className="p-3 md:p-6">
+            <p className="flex items-center justify-center text-sm md:text-lg font-semibold">
               Savings Compared to Last Month
             </p>
-            <p className="text-2xl font-bold text-green-600">
+            <p className="flex items-center justify-center text-base md:text-2xl font-bold text-green-600">
               ${insightsData?.savingsComparedToLastMonth.toFixed(2)}
             </p>
           </Card>

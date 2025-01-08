@@ -39,6 +39,7 @@ ChartJS.register(
 );
 
 export default function WhatIfSimulator() {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
   const [category, setCategory] = useState<string | undefined>();
   const [adjustment, setAdjustment] = useState<number>(0);
   const [direction, setDirection] = useState<string | undefined>();
@@ -85,9 +86,11 @@ export default function WhatIfSimulator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl md:mx-auto md:space-y-6">
       <Card className="p-6">
-        <h2 className="text-2xl font-bold mb-4">What-If Simulator</h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-4">
+          What-If Simulator
+        </h2>
         <div className="space-y-4">
           {/* Category Selector */}
           <Select onValueChange={setCategory} defaultValue={category}>
@@ -139,13 +142,13 @@ export default function WhatIfSimulator() {
       {/* Simulation Result */}
       {simulationResult && (
         <>
-          <Card className="p-6">
+          <Card className="p-6 mt-4">
             <h3 className="text-lg font-semibold mb-4">Simulation Results</h3>
             <p className="text-gray-600">
               If you {direction?.toLowerCase()} spending on {category} by{" "}
               {adjustment}%:
             </p>
-            <div className="mt-4 flex items-center justify-center text-2xl">
+            <div className="mt-2 md:mt-4 flex items-center justify-center text-xl md:text-2xl">
               {(simulationResult.new_savings ?? 0) >
               (simulationResult.current_savings ?? 0) ? (
                 <>
@@ -164,7 +167,7 @@ export default function WhatIfSimulator() {
               )}
             </div>
             {/* Bar Chart */}
-            <div className="mt-6">
+            <div className="mt-5 md:mt-6">
               <Bar
                 data={{
                   labels: ["Current Savings", "New Savings"],
@@ -186,7 +189,7 @@ export default function WhatIfSimulator() {
                     datalabels: {
                       color: "#FFFFFF", // Change the color of data labels
                       font: {
-                        size: 14, // Adjust font size
+                        size: isMobile ? 10 : 14, // Adjust font size
                         weight: "bold", // Adjust font weight
                       },
                       anchor: "center", // Position of the labels
@@ -201,14 +204,14 @@ export default function WhatIfSimulator() {
 
           {/* Gemini Insights */}
           <Card className="p-6 mt-4">
-            <h3 className="text-lg font-semibold mb-4">
+            <h3 className="text-lg md:text-xl font-semibold mb-4 text-blue-600">
               Your Personalized Insights
             </h3>
             <ul className="space-y-2">
               {simulationResult.recommendations.map((insight, index) => (
                 <li
                   key={index}
-                  className="flex items-start space-x-2 text-gray-700"
+                  className="flex items-start space-x-2 text-gray-700 text-sm md:text-base"
                 >
                   <span className="text-green-500 font-semibold">•</span>
                   <span>{insight}</span>
