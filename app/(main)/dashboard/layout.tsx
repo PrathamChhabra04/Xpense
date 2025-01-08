@@ -1,6 +1,7 @@
 import DashboardPage from "./page";
 import { Suspense } from "react";
 import BarLoaderClient from "@/components/Loader";
+import InsightsButton from "./_components/insights-btn";
 
 export default function Layout() {
   const loaderProps = {
@@ -13,7 +14,9 @@ export default function Layout() {
         <h1 className="text-6xl font-bold tracking-tight gradient-title">
           Dashboard
         </h1>
+        <InsightsButton />
       </div>
+
       <Suspense fallback={<BarLoaderClient {...loaderProps} />}>
         <DashboardPage />
       </Suspense>

@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+app/(main)/insights/_components/sliders.tsx
+app/(main)/insights/_components/budget-analysis.tsx
