@@ -1,67 +1,55 @@
-# Xpense - Your Smart Finance Manager
+# Xpense - AI-Powered Financial Manager
 
-Xpense is an intelligent finance management web application designed to simplify and enhance the way you track and analyze your expenses. With seamless AI integration, it helps users manage transactions, visualize data, and gain insights into their financial habits. Whether you're looking to track your daily spending, generate monthly reports, or set a budget, Xpense has you covered!
+Xpense is an intelligent, AI-driven financial management web application that simplifies expense tracking and budgeting. With advanced analytics, interactive data visualizations, and AI-powered insights, Xpense helps users stay on top of their finances with ease. Whether you want to manage transactions, generate reports, or set budgets, Xpense is your ultimate finance companion.
+
+---
 
 ## Features
 
-### User Authentication
+### 🌟 Core Features
 
-- Secure user authentication using **Clerk**.
-- Protection against bots and attacks with **Arcjet**.
+- **Secure Authentication**: Powered by **Clerk** for seamless signup and login.
+- **Transaction Management**:
+  - **Manual Entry**: Add transactions manually.
+  - **AI Receipt Scanner**: Automatically log transactions by scanning receipts.
+- **Account Management**: Support for multiple accounts to organize your finances better.
+- **Sorting & Filtering**: Sort transactions by category, date, or amount and search with ease.
+- **Insights**: Personalized AI-generated monthly budgets and financial insights.
 
-### Account Management
+### 📊 Data Visualization
 
-- Add multiple accounts to categorize your transactions effectively.
+- **Interactive Charts**:
+  - View income and expenses over the past six months.
+  - Analyze spending trends using bar graphs and pie charts.
+- **Savings Simulator**:
+  - Simulate potential savings by adjusting spending in specific categories.
+  - See real-time impacts on your overall budget.
 
-### Transaction Tracking
+### 🔔 Alerts & Reports
 
-- **Manual Entry**: Add transactions manually with ease.
-- **AI Receipt Scanner**: Scan your receipts with one click to automatically add transactions.
+- **Budget Alerts**: Receive notifications when your spending approaches budget limits.
+- **Monthly Summaries**: Detailed reports sent directly to your inbox.
+- **Recommendations**: Get actionable insights to optimize your finances.
 
-### Advanced Sorting and Filtering
+### 📱 Responsive Design
 
-- Sort transactions by:
-  - **Type** (Income/Expense)
-  - **Category**
-  - **Date**
-  - **Other custom criteria**
+- Fully optimized for desktop and mobile devices, providing a seamless experience across all platforms.
 
-### Data Visualization
+### 🔒 Security & Automation
 
-- **Interactive Graphs**:
-  - Visualize income and expenses over time.
-  - Understand spending patterns through detailed charts.
-- **Pie Chart**:
-  - See your monthly budget allocation at a glance on the dashboard.
+- **Bot Protection**: Ensured by **Arcjet**.
+- **Automated Tasks**: Background processes managed using **Inngest**.
+- **Email Notifications**: Handled seamlessly via **Resend**.
 
-### Monthly Reports
-
-- **Summary**: Get a detailed monthly report of all transactions.
-- **AI Insights**: Personalized financial insights to help you make better decisions.
-
-### User-Friendly Interface
-
-- Intuitive and interactive UI to provide the best user experience.
+---
 
 ## Tech Stack
 
-### Full Stack Framework
+- **Frontend**: Next.js with TypeScript and Tailwind CSS
+- **Backend**: Prisma ORM and PostgreSQL
+- **Libraries**: Zod, Inngest, Resend, Clerk, Arcjet
 
-- **Next.js** with **TypeScript**: Used for both frontend (interactive UI) and backend (API routes, server-side logic).
-- **Tailwind CSS**: For a responsive and visually appealing design.
-
-### Backend
-
-- **Next.js API Routes**: Simplifies server-side logic and integrations.
-- **Prisma**: Elegant and type-safe database ORM.
-- **PostgreSQL**: Robust and scalable relational database.
-
-### Libraries and Tools
-
-- **Zod**: Schema validation for enhanced type safety.
-- **Resend**: Seamless email integration.
-- **Inngest**: Workflow automation for background processes.
-- **Arcjet**: Advanced bot protection and security.
+---
 
 ## Installation
 
@@ -94,6 +82,8 @@ Xpense is an intelligent finance management web application designed to simplify
    http://localhost:3000
    ```
 
+---
+
 ## Contributing
 
 We welcome contributions to improve Xpense! If you'd like to contribute:
@@ -114,6 +104,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### Screenshots
 
-![Landing Page](./public/mainPic.png)
+![Landing Page](./public/landing.png)
 ![Dashboard](./public/dashboardPic.png)
-![Transactions](./public/transactionPic.png)
+![Create Transactions](./public/addTransaction.png)
+![All Transactions](./public/allTransactions.png)
